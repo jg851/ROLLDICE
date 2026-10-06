@@ -42,10 +42,10 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Dice(modifier: Modifier = Modifier) {
-
+    // 宣告狀態記錄目前顯示哪一張圖的索引 (0 代表 dice0，以此類推)
     var diceNumber by remember { mutableStateOf(0) }
 
-
+    // 骰子圖片資源陣列 (請確保 res/drawable 裡面有 dice0 到 dice6 的圖片)
     val diceImages = arrayOf(
         R.drawable.dice0,
         R.drawable.dice1,
@@ -71,11 +71,11 @@ fun Dice(modifier: Modifier = Modifier) {
                 .pointerInput(Unit) {
                     detectTapGestures(
                         onTap = {
-
+                            // 單擊：產生 1 到 6 的隨機整數
                             diceNumber = (1..6).random()
                         },
                         onDoubleTap = {
-
+                            // 雙擊：重置為 0 (回到 dice0)
                             diceNumber = 0
                         }
                     )
