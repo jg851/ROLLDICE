@@ -42,10 +42,10 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Dice(modifier: Modifier = Modifier) {
-    // 宣告狀態記錄目前顯示哪一張圖的索引 (0 代表 dice0，以此類推)
+
     var diceNumber by remember { mutableStateOf(0) }
 
-    // 骰子圖片資源陣列 (請確保 res/drawable 裡面有 dice0 到 dice6 的圖片)
+
     val diceImages = arrayOf(
         R.drawable.dice0,
         R.drawable.dice1,
@@ -60,7 +60,9 @@ fun Dice(modifier: Modifier = Modifier) {
         modifier = modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
-    ) {
+    )
+    {
+
         Text(
             text = "請點擊圖片隨機丟骰子\n作者：魏仁楷"
         )
