@@ -71,11 +71,11 @@ fun Dice(modifier: Modifier = Modifier) {
                 .pointerInput(Unit) {
                     detectTapGestures(
                         onTap = {
-                            // 單擊：產生 1 到 6 的隨機整數
+
                             diceNumber = (1..6).random()
                         },
                         onDoubleTap = {
-                            // 雙擊：重置為 0 (回到 dice0)
+
                             diceNumber = 0
                         }
                     )
